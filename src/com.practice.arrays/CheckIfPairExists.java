@@ -7,6 +7,19 @@ import java.util.Scanner;
  * Note: i!=j
  */
 
+/**
+ * OBSERVATION:
+ *
+ * Make all the pairs and chek if it can exists in the given array.
+ * For ex: A[1,2,3,4,5] so total number of pairs can be 25 as shown below.
+ * 00 01 02 03 04
+ * 10 11 12 13 14
+ * 20 21 22 23 24
+ * 30 31 32 33 34
+ * 40 41 42 43 44
+ *
+ * Having two for loops to crate pair so TC= BigO(n^2) and SC = BigO(1)
+ */
 public class CheckIfPairExists {
 
     public boolean findIfPairExists(int[] arr,int K){

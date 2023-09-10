@@ -14,6 +14,8 @@ import java.util.*;
  * 3. There can be more than 1 maxElement. Hence, #totalNumber - #tocalCountOfMaxElement
  *    are the numbers available in the given array which has at least one element
  *    greater than itself.
+ *
+ *    TC = BigO(n) and SC = BigO(1).
  */
 
 
