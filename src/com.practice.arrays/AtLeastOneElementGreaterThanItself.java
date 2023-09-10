@@ -5,7 +5,7 @@ package com.practice.arrays;
  *  int[] arr = {3,-2,6,8,4,8,5};
  */
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * OBSERVATION :
@@ -19,7 +19,8 @@ import java.util.Scanner;
 
 public class AtLeastOneElementGreaterThanItself {
 
-    public int findElement(int[] array){
+    //BruteForce Approach with two for loop.
+    public int findElementUsingBruteForceApproach(int[] array){
         int max_element = Integer.MIN_VALUE;
         int count_max = 0;
         for(int i=0; i<array.length;i++){
@@ -27,13 +28,37 @@ public class AtLeastOneElementGreaterThanItself {
                 max_element = array[i];
             }
         }
-        for(int j=0; j<array.length;j++){
-            if(array[j] == max_element){
+        for(int j=0; j<array.length;j++) {
+            if (array[j] == max_element) {
                 count_max++;
             }
         }
     return array.length-count_max;
     }
+
+    // Optimised solution with one for loop and HashMap.
+    public int findElementOptimisedSolution(int[] arr){
+       Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+       int count = 0;
+       int max_element = 0;
+       int max_count = 0;
+       for(int i=0; i<arr.length;i++){
+           if(arr[i]>max_element){
+               max_element = arr[i];
+           }
+           if(map.containsKey(arr[i])) {
+               count++;
+               map.put(arr[i], count);
+           }else{
+               count = 1;
+               map.put(arr[i], count);
+           }
+       }
+       max_count = map.get(max_element);
+
+       return arr.length - max_count;
+    }
+
     public static void main(String[] str){
         Scanner scan = new Scanner(System.in);
         scan.nextLine();
@@ -50,7 +75,9 @@ public class AtLeastOneElementGreaterThanItself {
 
         int count = 0;
         AtLeastOneElementGreaterThanItself oneElement = new AtLeastOneElementGreaterThanItself();
-        count = oneElement.findElement(arr);
+        count = oneElement.findElementUsingBruteForceApproach(arr);
+        System.out.println("Available element in an array : "+ count);
+        count = oneElement.findElementOptimisedSolution(arr);
         System.out.println("Available element in an array : "+ count);
     }
 }
