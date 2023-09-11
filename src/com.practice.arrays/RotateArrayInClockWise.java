@@ -33,9 +33,14 @@ public class RotateArrayInClockWise {
         System.out.print("Enter the value of K : ");
         k = scan.nextInt();
         RotateArrayInClockWise rotate = new RotateArrayInClockWise();
-        rotate.reverseEntireArray(A,n);
-        rotate.reverseFirstKElements(A,k);
-        rotate.reverseLastElements(A,k,n-1);
+        // BruteForceApproach
+//        rotate.reverseEntireArray(A,n);
+//        rotate.reverseFirstKElements(A,k);
+//        rotate.reverseLastElements(A,k,n-1);
+        //Optimised Solution
+        rotate.rotationGame(A,0,n-1);
+        rotate.rotationGame(A,0,k-1);
+        rotate.rotationGame(A,k,n-1);
     }
 
     public int[] reverseEntireArray(int[] A, int n){
@@ -74,6 +79,17 @@ public class RotateArrayInClockWise {
             A[q] = temp;
             p++;
             q--;
+        }
+        return A;
+    }
+
+    public int[] rotationGame(int [] A, int start, int end){
+        int i,j;
+        int temp = 0;
+        for(i=start,j=end;i<j;i++,j--){
+            temp = A[i];
+            A[i] = A[j];
+            A[j] = temp;
         }
         return A;
     }
