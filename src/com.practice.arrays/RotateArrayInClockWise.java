@@ -3,7 +3,7 @@ package com.practice.arrays;
 /**
  * Given an array of N element, rotate it in clockwise direction by k times.
  * for example:
- * Input : int[] array = {3,-2,1,4,6,9,8}
+ * Input : int[] array = {3,-2,1,4,6,9,8} and k = 4
  * Output: array = {4,6,9,8,3,-2,1}
  */
 
