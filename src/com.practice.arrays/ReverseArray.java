@@ -12,6 +12,7 @@ import java.util.Scanner;
  * 1. Existing array should reverse. No need to create new array to store reversed array.
  * 2. This can be solved using while loos and swap function.
  * 3. stop loop through the array element when i == j
+ * 4. In both way iteration could be n/2 where n is size of array.
  *
  * TC = BigO(n) and SC=BigO(1)
  */
