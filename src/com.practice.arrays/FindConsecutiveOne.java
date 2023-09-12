@@ -4,7 +4,16 @@ import java.util.Scanner;
 
 /**
  * Created new class to find number of consecutive one from the given Binary array.
+ * OBSERVATION :
+ * 1. Iterate the given array and check if digit is 1.
+ * 2. If it is 1 then increment count.
+ * 3. If it is 0 then reset count to 0.
+ * 4. Collect all the count when digit is 1 and return the max count.
+ *
+ * TC = BigO(n) and SC = BigO(1)
  */
+
+
 public class FindConsecutiveOne {
     public static void main(String[] str) {
         Scanner scan = new Scanner(System.in);
