@@ -27,6 +27,16 @@ public class DuplicateZeros {
     }
 
     // Optimised solution.
+
+    /**
+     * OBSERVATION:
+     * 1. count all the zeros in the given array.
+     * 2. find out the index of non-zero element which should be less than n i.e. n+zerosCount-1 < n
+     * 3. Iterate the array in reverse order from end of the original array to beginning.
+     * 4. If current element is 0 then duplicate it and decrement endIndex.
+     *
+     * @param array
+     */
     public void duplicateZeroToGivenArrayOptimised(int[] array){
         int n = array.length;
         int zerosCount = 0;
