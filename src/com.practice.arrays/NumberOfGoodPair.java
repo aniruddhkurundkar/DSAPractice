@@ -5,26 +5,15 @@ import java.util.*;
 public class NumberOfGoodPair {
 
     int getCountOfGoodPair(int[] nums){
-        Map<Integer, Integer> map = new HashMap();
-        int count = 1;
-        int goodPairsCount = 0;
-        for(int i=0; i<nums.length;i++){
-            if(map.containsKey(nums[i])){
-                map.put(nums[i],++count);
-            }else{
-                map.put(nums[i],1);
+        int goodPairsCount =0;
+        for(int i =0; i<nums.length; i++){
+            for(int j=i+1; j<nums.length; j++){
+                if(i<j && nums[i] == nums[j]){
+                    goodPairsCount += 1;
+                }
             }
         }
 
-        Set<Integer> set = new HashSet<>();
-        for(int a:nums){
-            set.add(a);
-        }
-        for(int i =0; i<set.size(); i++){
-            if(map.get(nums[i])>1){
-                goodPairsCount = goodPairsCount + map.get(nums[i]);
-            }
-        }
         return goodPairsCount;
     }
     public static void main(String[] args) {
