@@ -1,6 +1,4 @@
-package com.practice.arrays;
-
-import java.util.Arrays;
+package com.practice.array;
 
 public class SumOfMatrixElements {
     public int[][] findMatrix(int[][] arr){

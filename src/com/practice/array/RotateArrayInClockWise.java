@@ -1,4 +1,4 @@
-package com.practice.arrays;
+package com.practice.array;
 
 /**
  * Given an array of N element, rotate it in clockwise direction by k times.

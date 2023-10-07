@@ -1,9 +1,6 @@
-package com.practice.arrays;
+package com.practice.array;
 
 import java.util.*;
-import java.util.stream.Collectors;
-
-import static java.util.Arrays.*;
 
 public class LargestSubArray {
 

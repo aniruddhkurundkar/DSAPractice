@@ -1,4 +1,4 @@
-package com.practice.arrays;
+package com.practice.array;
 /**
  *  Given an array of size N. Count number of elements
  *  having at least one element grater than itself.

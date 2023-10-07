@@ -1,6 +1,4 @@
-package com.practice.arrays;
-
-import java.util.*;
+package com.practice.array;
 
 public class NumberOfGoodPair {
 

@@ -1,6 +1,5 @@
-package com.practice.arrays;
+package com.practice.array;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;

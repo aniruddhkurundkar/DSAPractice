@@ -1,7 +1,6 @@
-package com.practice.arrays;
+package com.practice.array;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class SumOfUniqueElements {
     public int sumOfUnique(int[] nums) {

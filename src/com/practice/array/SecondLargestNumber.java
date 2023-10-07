@@ -1,4 +1,4 @@
-package com.practice.arrays;
+package com.practice.array;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
