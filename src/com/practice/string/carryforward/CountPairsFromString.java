@@ -6,6 +6,7 @@ package com.practice.string.carryforward;
  * String[i] = "a"
  * String[j] = "j"
  *
+ * Find the count of a in the given string that will the number of pair.
  */
 public class CountPairsFromString {
     public static void main(String[] args) {
