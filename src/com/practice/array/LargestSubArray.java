@@ -27,16 +27,27 @@ public class LargestSubArray {
      * @return
      */
     int getLargestSubArray(int[] a){
-        int[] pf = new int[]{a[0]};
+        int[] pf = new int[a.length];
+        pf[0] = a[0];
         for(int i=1; i<a.length;i++){
             pf[i] = pf[i-1] + a[i];
         }
-        return 0;
+        //pf = {-2,-5,-1,-2,-4,-3,2,-1}
+        int min_ppf_sum = 0;
+        int result = Integer.MIN_VALUE;
+        for(int k=0; k<pf.length; k++){
+            result = Math.max(result, pf[k] - min_ppf_sum);
+            min_ppf_sum = Math.min(min_ppf_sum,pf[k]);
+        }
+        System.out.println(" Size of largest SubArray : " + result);
+        return result;
     }
 
     public static void main(String[] q){
-        int[] arr = {1,2,-2,4,-4,3,-3,5,2};
+        int[] arr = {-2, -3, 4, -1, -2, 1, 5, -3};
         LargestSubArray lsa = new LargestSubArray();
+        lsa.getLargestSubArray(arr);
+        //lsa.findLargestSubArray(arr);
         //System.out.println(lsa.findLargestSubArray(arr));
 
     }
