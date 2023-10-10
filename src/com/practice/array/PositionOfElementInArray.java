@@ -30,10 +30,8 @@ public class PositionOfElementInArray {
             if (posList.size() == 1) {
                 posArray = new int[]{posList.get(0), posList.get(0)};
             } else if (flag && posList.size() > 1) {
-
                 posArray[0] = posList.get(0);
                 int end = 0;
-
                 Collections.sort(posList);
                 end = posList.get(posList.size() - 1);
                 posArray[1] = end;
