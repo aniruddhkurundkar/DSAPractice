@@ -1,6 +1,6 @@
 package com.practice.string;
 
-public class ReverseString {
+public class ReverseWordsOfString {
 
     public String reverseWords(String s) {
         String[] strArray = s.split(" ");
@@ -18,7 +18,7 @@ public class ReverseString {
     }
     public static void main(String[] args) {
         String str = "Let's take LeetCode contest";
-        ReverseString reverse = new ReverseString();
+        ReverseWordsOfString reverse = new ReverseWordsOfString();
         reverse.reverseWords(str);
     }
 }
