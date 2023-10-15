@@ -16,13 +16,9 @@ public class ReverseVowelsOfString {
         set.add('A');set.add('E');set.add('I');set.add('O');set.add('U');
         int start = 0;
         int end = s.length() - 1;
-
         char[] sChar = s.toCharArray();
-
-
         while (start < end) {
-
-            while (start < s.length () && !set.contains(sChar[start])) {
+            while (start < s.length() && !set.contains(sChar[start])) {
                 start++;
             }
 
