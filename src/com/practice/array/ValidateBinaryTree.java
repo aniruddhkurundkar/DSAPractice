@@ -29,7 +29,7 @@ public class ValidateBinaryTree {
             int[] children = {leftChild[node],rightChild[node]};
             for(int child : children){
                 if(child != -1){
-                    if(seen.contains(child)){
+                    if(!seen.contains(child)){
                         return false;
                     }
                     queue.add(child);
