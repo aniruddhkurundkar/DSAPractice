@@ -4,51 +4,71 @@ import java.util.*;
 
 public class LargestSubArray {
 
-    int findLargestSubArray(int[] a){
+    int findLargestSubArray(int[] a) {
         int max = 0;
-        Map<Integer,Integer> map = new HashMap<>();
-            for(int i=0; i<a.length; i++){
-                int sum=0;
-                for(int j=i;j<a.length;j++){
-                    sum+=a[j];
-                    if(sum==0){
-                        max = j;
-                        map.put(sum,max);
-                    }
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < a.length; i++) {
+            int sum = 0;
+            for (int j = i; j < a.length; j++) {
+                sum += a[j];
+                if (sum == 0) {
+                    max = j;
+                    map.put(sum, max);
                 }
             }
-            System.out.println("LargestSubArray Length with sum 0 :" + max);
+        }
+        System.out.println("LargestSubArray Length with sum 0 :" + max);
         return max;
     }
 
     /**
      * Find Largest sub-array using prefix array method.
+     *
      * @param a
      * @return
      */
-    int getLargestSubArray(int[] a){
+    int getLargestSubArray(int[] a) {
         int[] pf = new int[a.length];
         pf[0] = a[0];
-        for(int i=1; i<a.length;i++){
-            pf[i] = pf[i-1] + a[i];
+        for (int i = 1; i < a.length; i++) {
+            pf[i] = pf[i - 1] + a[i];
         }
         //pf = {-2,-5,-1,-2,-4,-3,2,-1}
         int min_ppf_sum = 0;
         int result = Integer.MIN_VALUE;
-        for(int k=0; k<pf.length; k++){
+        for (int k = 0; k < pf.length; k++) {
             result = Math.max(result, pf[k] - min_ppf_sum);
-            min_ppf_sum = Math.min(min_ppf_sum,pf[k]);
+            min_ppf_sum = Math.min(min_ppf_sum, pf[k]);
         }
         System.out.println(" Size of largest SubArray : " + result);
         return result;
     }
 
-    public static void main(String[] q){
-        int[] arr = {-2, -3, 4, -1, -2, 1, 5, -3};
+    public static void main(String[] q) {
+        //int[] arr = {-2, -3, 4, -1, -2, 1, 5, -3};
+        int[] arr = {16, 12, 9, 19, 11, 8};
+        int k = 3;
         LargestSubArray lsa = new LargestSubArray();
+        //lsa.findSubArray(arr, k);
         lsa.getLargestSubArray(arr);
         //lsa.findLargestSubArray(arr);
         //System.out.println(lsa.findLargestSubArray(arr));
+    }
 
+    int[] findSubArray(int[] subArray, int k) {
+        int[] largestSubArray = new int[k];
+        int sum = 0;
+        int max = 0;
+        for (int i = 0; i < subArray.length; i++) {
+            sum += subArray[i];
+            if (sum > max) {
+                max = sum;
+                for (int n = i; n < k; n++) {
+                    largestSubArray[n] = subArray[i];
+                   // largestSubArray[n] = subArray[j];
+                }
+            }
+        }
+        return largestSubArray;
     }
 }
